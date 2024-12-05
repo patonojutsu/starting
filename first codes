@@ -1,0 +1,5 @@
+age = int(input("how old are you?"))
+if age >= 18:
+	print("hey buddy you can drive")
+else:
+	print("hey dude, you are too young to drive")
