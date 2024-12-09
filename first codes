@@ -1,5 +1,26 @@
+check driver license
+
 age = int(input("how old are you?"))
 if age >= 18:
 	print("hey buddy you can drive")
 else:
 	print("hey dude, you are too young to drive")
+------------------------------------------------------------------------
+classify age
+
+
+age = int(input("what is your age?"))
+if age <= 9:
+	print(" you are brat")
+elif 9 <= age <= 17:
+	print(" you are teenager")
+elif 18 <= age <= 64:
+	print("you are adult")
+else:
+	print("you are almost dead")
+
+
+-------------------------------------------------
+
+
+
