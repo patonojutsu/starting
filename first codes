@@ -20,7 +20,56 @@ else:
 	print("you are almost dead")
 
 
--------------------------------------------------
+-------------------------------------------------------------------------
+calculator verify
+
+while True:
+	try:
+		num1 = float(input("choose a number"))
+		num2 = float(input("choose another number"))
+		print("if you wanna plus = 1")
+		print("if you wanna minus = 2")
+		print("if you wanna divide = 3")
+		print("if you wanna multiply = 4")
+		print("if you wanna exit = 5")
+	
+		operation = int(input("choose a operation"))
+		if operation == 1:
+			result = num1 + num2 
+			print(f"the result is {result}")
+		elif operation == 2:
+			result = num1 - num2
+			print(f"the result is {result}")
+		elif operation == 3:
+			result = num1 / num2 
+			if num2 != 0:
+				print(f"the result is {result}")
+			else:
+				num2 == 0
+				print(f"you cannot use 0 as denominator")
+		elif operation == 4:
+			result = num1 * num2 
+			print(f"the result is {result}")
+		elif operation == 5:
+			print(f"goobye")
+			break
+		else:
+			print("invalid operation")
+		
+		if operation in [1,2,3,4]:
+			result > 0
+			print("the result is positive")
+		elif result < 0:
+			print("the result is negative")
+		else:
+			result ==0
+			print("the result is 0")
+		
+	except ValueError:
+		print("Error input")
+	
+	
+	
 
 
 
