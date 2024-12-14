@@ -89,7 +89,7 @@ while attempts > 0:
 		print("access denied")
 		
 if attempts == 0:
-	print("too many failed attempts. Acess locked.")
+	print("too many failed attempts. Access locked.")
 	
 	
 
