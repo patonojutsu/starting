@@ -67,7 +67,29 @@ while True:
 		
 	except ValueError:
 		print("Error input")
-	
+
+------------------------------------------------------------------------
+#LOGIN APP
+
+ 
+attempts = 3
+
+while attempts > 0:
+	print("let`s login")
+
+	login = input(" USERNAME: ")
+	password = input(" PASSWORD: ")
+
+
+	if login == "ilovepython" and password == "ilovepython123":
+		print("access allowed")
+		break
+	else:
+		attempts -= 1
+		print("access denied")
+		
+if attempts == 0:
+	print("too many failed attempts. Acess locked.")
 	
 	
 
