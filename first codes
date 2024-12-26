@@ -90,6 +90,66 @@ while attempts > 0:
 		
 if attempts == 0:
 	print("too many failed attempts. Access locked.")
+
+------------------------------------------------------------------------------------
+
+basic shop simulator
+
+import tkinter as tk
+from tkinter import messagebox
+
+# Função para adicionar produtos ao carrinho
+def add_to_cart(product, price):
+    cart.append((product, price))
+    total = sum([item[1] for item in cart])
+    cart_label.config(text=f"Cart Total: ${total:.2f}")
+
+# Função para finalizar a compra
+def checkout():
+    if not cart:
+        messagebox.showinfo("Cart is Empty", "Add some products to the cart first!")
+        return
+
+    total = sum([item[1] for item in cart])
+    if total > 100:
+        total *= 0.9  # 10% de desconto
+        discount = "10% OFF"
+    else:
+        total *= 0.95  # 5% de desconto
+        discount = "5% OFF"
+
+    messagebox.showinfo("Checkout", f"Total: ${total:.2f} ({discount})\nThank you for shopping!")
+    cart.clear()
+    cart_label.config(text="Cart Total: $0.00")
+
+# Lista de produtos
+products = {"Cap": 10, "Tshirt": 20, "Jeans": 50, "Shoes": 75, "Glasses": 30}
+cart = []  # Carrinho
+
+# Janela principal
+root = tk.Tk()
+root.title("Online Store")
+
+# Exibição dos produtos
+row = 0
+for product, price in products.items():
+    tk.Label(root, text=f"{product}: ${price}").grid(row=row, column=0, padx=100, pady=5)
+    tk.Button(root, text="Add to Cart", command=lambda p=product, pr=price: add_to_cart(p, pr)).grid(row=row, column=1, padx=100, pady=5)
+    row += 1
+# Exibição do total do carrinho
+cart_label = tk.Label(root, text="Cart Total: $0.00")
+cart_label.grid(row=row, column=0, columnspan=2, pady=100)
+row += 1
+
+
+# Botão de Checkout
+checkout_button = tk.Button(root, text="Checkout", command=checkout)
+checkout_button.grid(row=row + 1, column=0, columnspan=2, pady=100)
+
+# Iniciar o loop da interface
+root.mainloop()
+
+-------------------------------------------------------------------------------
 	
 	
 
